@@ -1,0 +1,138 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  background: #e2e2e2;
+
+}
+
+.intro {
+  text-align: center;
+  padding: 5px;
+  margin-top: 75px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(202, 194, 194);
+  background: rgba(95, 97, 93, 0.377);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.intro:hover {
+  color: rgb(223, 255, 127);
+  background-color: rgba(90, 96, 97, 0.89);
+}
+
+.app-header {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.login-wrapper {
+  height: 97%;
+  /* background-image: url("assests\images\bg4alter.png"); */
+  background-image: url("assests\AI_Generated_Bg\BG1-1-1.png");
+  background-size: cover;
+
+}
+
+.positronx {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.box {
+  position: relative;
+  opacity: 95%;
+  float: left;
+  top: -8px;
+  padding: 60px 50px 40px 50px;
+
+  background: rgba(36, 37, 35, 0.377);
+  border-radius: 10px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  z-index: 5;
+  width: fit-content;
+}
+
+.box.back {
+  transform: scale(.95);
+  -webkit-transform: scale(.95);
+  -ms-transform: scale(.95);
+  top: -20px;
+  opacity: .8;
+  z-index: -1;
+}
+
+.box:before {
+  content: "";
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  background: rgba(255, 255, 255, .6);
+  left: 0;
+  transform: scale(.95);
+  -webkit-transform: scale(.95);
+  -ms-transform: scale(.95);
+  z-index: -1;
+}
+
+.login-wrapper .example-form {
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-wrapper .example-full-width,
+.login-wrapper .btn-block {
+  width: 100%;
+}
+
+.login-wrapper mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+}
+
+.login-wrapper mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.login-wrapper .mat-card {
+  padding: 40px 70px 50px;
+}
+
+.login-wrapper .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #FFF7FA;
+}
+
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.8375em 0;
+}
+
+.btn-block:hover {
+  color: rgb(233, 97, 149);
+  font-weight: bold;
+  background: rgb(0, 255, 170) ; opacity: 80%;
+
+}
+

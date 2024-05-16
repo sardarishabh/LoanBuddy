@@ -1,0 +1,84 @@
+<nav class="navbar" style=" height: 80px; width: auto; box-shadow: 0px 2px 5px  #777;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    |
+    <th><a class="text-secondary" href="/loans">View Loans</a></th>
+    |
+    <th><a class="text-secondary" href="/applications">View Loan Applications</a></th>
+    |
+    <th><a class="text-secondary" href="/loan-application">Apply for Loan</a></th>
+    |
+    <th><a class="text-secondary" href="/memberlist">View List of Members</a></th>
+    |
+    <th><button class="btn " (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+
+<body class="bg-gradient">
+  <br>
+  <h1 class="text"
+    style="background-color: rgb(33, 192, 139); margin-left: 20px; font-family:Georgia, 'Times New Roman', Times, serif; width: max-content; padding: 10px;">
+    <strong>Dashboard</strong>
+  </h1>
+
+  <div class="" style="height: 160px; width: 185px; border: 1px solid grey; margin: 20px; border-radius: 8px;">
+    <picture>
+      <img [src]="'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRd5yrhhzRD-ZSQjwcmkkC6bFin7udo_I3cDjK-dcuCEBitFVak'" alt=""
+        srcset="" style="height: 150px; width: 180px;">
+    </picture>
+
+  </div>
+  <mat-card style="display: flexbox; border: 1px solid black; padding-top: 20px; margin: 20px;font-size: medium;">
+    <div class="contianer">
+      <div class="col-6">
+        <table class="table-active " style="border: 1px; display: flexbox;">
+          <legend><b>Member Details :</b></legend>
+
+
+          <tr>
+            <td>Member Id : </td>
+            <td>{{member.memberId}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Member Name : </td>
+            <td>{{member.firstName}} {{member.lastName}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Username : </td>
+            <td>{{member.userName}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Date of Birth : </td>
+            <td>{{member.dateOfBirth}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Address : </td>
+            <td>{{member.address }}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Member Type : </td>
+            <td>{{member.memberType}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Contact : </td>
+            <td>{{member.contactNumber}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td>Email Id : </td>
+            <td>{{member.emailId }}</td>
+          </tr>
+          <br>
+        </table><br>
+
+      </div>
+
+    </div>
+  </mat-card>
+</body>
