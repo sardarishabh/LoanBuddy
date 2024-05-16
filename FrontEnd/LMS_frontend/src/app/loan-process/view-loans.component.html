@@ -1,0 +1,96 @@
+<nav class="navbar" style=" height: 80px; width: auto; box-shadow: 0px 2px 5px  #777;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    |
+    <th><a class="text-secondary" href="/dashboard">Dashboard</a></th>
+    |
+    <th><a class="text-secondary" href="/loans">View Loans</a></th>
+    |
+    <th><a class="text-secondary" href="/loan-application">Apply for Loan</a></th>
+    |
+    <th><a class="text-secondary" href="/memberlist">View List of Members</a></th>
+    |
+    <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+
+<span *ngIf="memType === 'Admin'; then cond1 else cond2"></span>
+<ng-template #cond1>
+  <br>
+  <div class="container">
+    <h1 class="text-primary">Loan Application Details</h1><br>
+    <hr style="color: red; border: 2px solid red">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Application Id</th>
+        <th>Member Id</th>
+        <th>Loan Id</th>
+        <th>Loan Amount</th>
+        <th>Loan Duration</th>
+        <th>Purpose</th>
+        <th>Mode of Payment</th>
+        <th>Loan Status</th>
+        <th>&nbsp;&nbsp;Update Status</th>
+      </tr>
+      <tr *ngFor="let application of loanApplications">
+        <td>{{application.applicationId}}</td>
+        <td>{{application.memberId}}</td>
+        <td>{{application.loanId}}</td>
+        <td>{{application.loanAmount}}
+        <td>{{application.loanDuration}}</td>
+        <td>{{application.purpose}}</td>
+        <td>{{application.modeOfPayment}}</td>
+        <td>{{application.loanStatus}}</td>
+        <td>
+          <!-- <a href="/updateStatus/{{application.applicationId}}">Update Status</a> -->
+          <!-- <select class="select-input" style="border: 1px solid#777;" #lS name="loanStatus" id="loanStatus" ngModel>
+            <option value="default" disabled style="box-shadow:0px 2px 5px  #777;">--status--</option>
+            <option value="Approved">approved</option>
+            <option value="Denied">denied</option>
+          </select> -->
+          <input type="hidden" #ac value="Approved">
+          <input type="hidden" #rj value="Denied">
+
+          <button class="btn btn-outline-success"  type="submit" name="loanStatus" id="loanStatus" placeholder="approve" value="Approved" (click)="onChange(application.applicationId, ac.value)" >approve</button>&nbsp;
+          <button class="btn btn-outline-danger"  type="submit" name="loanStatus" id="loanStatus" placeholder="reject" value="Denied"  (click)="onChange(application.applicationId, rj.value)" >reject</button>&nbsp;
+
+        </td>
+      </tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #cond2>
+
+  <br>
+  <div class="container">
+    <h1 class="text-primary">Loan Application Details</h1><br>
+    <hr style="color: red; border: 2px solid red">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Application Id</th>
+        <th>Member Id</th>
+        <th>Loan Id</th>
+        <th>Loan Amount</th>
+        <th>Loan Duration (EMIs)</th>
+        <th>Purpose</th>
+        <th>Mode of Payment</th>
+        <th>Loan Status</th>
+        <!-- <th>&nbsp;&nbsp;Update Status</th> -->
+      </tr>
+      <ng-container *ngFor="let application of loanApplications">
+      <tr *ngIf="application.memberId === memId">
+        <td>{{application.applicationId}}</td>
+        <td>{{application.memberId}}</td>
+        <td>{{application.loanId}}</td>
+        <td>{{application.loanAmount}}
+        <td>{{application.loanDuration}}</td>
+        <td>{{application.purpose}}</td>
+        <td>{{application.modeOfPayment}}</td>
+        <td>{{application.loanStatus}}</td>
+        </tr>
+        </ng-container>
+    </table>
+  </div>
+
+</ng-template>

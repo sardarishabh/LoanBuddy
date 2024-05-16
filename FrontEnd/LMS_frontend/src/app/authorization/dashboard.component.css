@@ -1,0 +1,46 @@
+.img-responsive {
+  height: auto;
+  width: auto;
+  max-height: auto;
+  max-width: auto;
+}
+
+.pp {
+  background-image: url(assests\images\imagesMore\profilepic.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.table-active {
+  background-image: url(assests\images\dash.jpg) ;
+  text-decoration: solid;
+  height: auto;
+  width: auto;
+}
+
+.navbar{
+  background-color: gainsboro;
+}
+
+.navbar-brand {
+  background-image: url(assests\images\logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  height: 40px;
+  width: 200px;
+}
+
+.btn {
+  border-radius: 15%;
+  box-shadow: 0px 2px 5px  #777;
+  color: whitesmoke;
+  background: rgb(0, 68, 255);
+}
+
+.btn:hover {
+  background: #d8085f;
+}

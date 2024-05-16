@@ -1,0 +1,72 @@
+<nav class="navbar" style=" height: 80px; width: auto; box-shadow: 0px 2px 5px  #777;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    |
+    <th><a  class="text-secondary"  href="/dashboard">Dashboard</a></th>
+    |
+    <th><a  class="text-secondary" href="/applications">View Loan Applications</a></th>
+    |
+    <th><a  class="text-secondary" href="/loan-application">Apply for Loan</a></th>
+    |
+    <th><a  class="text-secondary" href="/memberlist">View List of Members</a></th>
+    |
+    <button class="btn" (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+<br>
+
+<span *ngIf="memType === 'Admin'; then cond1 else cond2"></span>
+
+<ng-template #cond1>
+<div class="container">
+  <h1 class="text-primary">Loan Details</h1><br>
+  <button class="btn btn-primary" (click)="onClick()">Add Loan</button>
+  <hr style="color: red; border: 2px solid red">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Loan Id</th>
+      <th>Loan Name</th>
+      <th>Description</th>
+      <th>&nbsp;&nbsp;Actions</th>
+    </tr>
+
+    <tr *ngFor="let loan of loans">
+      <td>{{loan.loanId}}</td>
+      <td>{{loan.loanName}}</td>
+      <td>{{loan.description}}</td>
+      <td>
+        <a href="/delete/{{loan.loanId}}">Delete</a>
+        |
+        <a href="/update/{{loan.loanId}}">Update</a>
+      </td>
+    </tr>
+  </table>
+</div>
+</ng-template>
+
+<ng-template  #cond2>
+  <div class="container">
+    <h1 class="text-primary">Loan Details</h1><br>
+    <!-- <button class="btn btn-primary" (click)="onClick()">Add Loan</button> -->
+    <hr style="color: red; border: 2px solid red">
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Loan Id</th>
+        <th>Loan Name</th>
+        <th>Description</th>
+        <!-- <th>&nbsp;&nbsp;Actions</th> -->
+      </tr>
+
+      <tr *ngFor="let loan of loans">
+        <td>{{loan.loanId}}</td>
+        <td>{{loan.loanName}}</td>
+        <td>{{loan.description}}</td>
+        <!-- <td>
+          <a href="/delete/{{loan.loanId}}">Delete</a>
+          |
+          <a href="/update/{{loan.loanId}}">Update</a>
+        </td> -->
+      </tr>
+    </table>
+  </div>
+</ng-template>

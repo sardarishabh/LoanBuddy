@@ -1,0 +1,104 @@
+
+  <nav class="navbar" style=" height: 80px; width: auto; box-shadow: 0px 2px 5px  #777;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      |
+      <th><a  class="text-secondary" href="/dashboard">Dashboard</a></th>
+      |
+      <th><a class="text-secondary"  href="/loans">View Loans</a></th>
+      |
+      <th><a  class="text-secondary" href="/applications">View Loan Applications</a></th>
+      |
+      <th><a  class="text-secondary" href="/memberlist">View List of Members</a></th>
+      |
+      <button class="btn" (click)="onLogout()">Logout</button>
+    </div>
+  </nav>
+
+
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h1 class="text-primary">Loan Application Form</h1>
+              <form #ApplyForm="ngForm" (ngSubmit)="onSubmit(ApplyForm.value)">
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+
+                    <div class="form-outline">
+                      <label class="form-label" for="memberId">Member ID :</label>
+                      <input type="number" id="memberId" class="form-control form-control-lg" name="memberId"
+                        [(ngModel)]="member.memberId" readonly />
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 mb-4">
+                    <div class="col-12">
+                      <label class="form-label select-label">Loan Name :</label><br>
+                      <select class="select form-control-lg">
+                        <option value="default" disabled>--Loan Type--</option>
+                        <option *ngFor="let loan of loans"  name="loanId" [(ngModel)]="loan.loanId"> {{ loan.loanName }} </option>
+                    </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="memberId">Enter Loan Amount :</label>
+                      <input type="number" id="loanAmount" class="form-control form-control-lg" name="loanAmount"
+                      [(ngModel)]="loanAmount" />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <div>
+                      <label class="form-label" for="memberId">Loan Duration (No of EMIs) :</label>
+                      <input type="number" id="loanAmount" class="form-control form-control-lg" name="loanDuration"
+                      [(ngModel)]="loanDuration" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div>
+                      <label class="form-label" for="memberId">Purpose of Loan :</label>
+                      <input type="text" id="purpose" class="form-control form-control-lg" name="purpose" [(ngModel)]="purpose"  required/>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <div class="col-12">
+                      <label class="form-label select-label">Preferred Mode of Payment :</label>
+                      <select class="select form-control-lg" name="modeOfPayment" [(ngModel)]="modeOfPayment">
+                        <option value="default" disabled>--modes--</option>
+                        <option value="Net Banking">Net Banking</option>
+                        <option value="NEFT">NEFT</option>
+                        <option value="Cash">CASH</option>
+                      </select>
+
+                      <div>
+                        <input type="hidden" id="loanStatus" class="form-control form-control-lg" name="loanStatus" [(ngModel)]="loanStatusDef" value="Pending"/>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" [disabled]="!ApplyForm.valid" type="submit" value="Submit" />
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

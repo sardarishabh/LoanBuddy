@@ -1,0 +1,55 @@
+<span *ngIf="memType === 'Admin'; then cond1 else cond2"></span>
+
+<ng-template #cond1>
+  <nav class="navbar" style=" height: 80px; width: auto; box-shadow: 0px 2px 5px  #777;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      |
+      <th><a class="text-secondary" href="/dashboard">Dashboard</a></th>
+      |
+      <th><a class="text-secondary" href="/loans">View Loans</a></th>
+      |
+      <th><a class="text-secondary" href="/applications">View Loan Applications</a></th>
+      |
+      <th><a class="text-secondary" href="/memberlist">View List of Members</a></th>
+      |
+      <button class="btn" (click)="onLogout()">Logout</button>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    <h1 class="text-primary">ADD LOAN</h1>
+    <div class="col-6">
+      <form #loanForm="ngForm" (ngSubmit)="onSubmit(loanForm.value)">
+        <div class="form-group">
+          <label>Loan Id</label>
+          <input type="number" class="form-control" name="loanId" ngModel />
+        </div>
+
+        <div class="form-group">
+          <label>Loan Name</label>
+          <input type="text" class="form-control" name="loanName" ngModel />
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" name="description" ngModel />
+        </div><br>
+
+        <input type="submit" class="btn btn-primary" value="Add" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
+
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #cond2>
+  <div class="ml-3">
+    <h1 class="pt-5">401 - Unauthorized : Access is denied to the page.</h1>
+    <hr>
+    <b>You don't have permission to view this page using the credential that you have supplied.</b>
+    <hr>
+    <button class="btn-secondary" routerLink="/login" (click)="onLogout()">Back to Login Page</button>
+  </div>
+</ng-template>

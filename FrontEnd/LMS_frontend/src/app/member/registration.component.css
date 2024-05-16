@@ -1,0 +1,44 @@
+.intro {
+  text-align: center;
+  position: initial;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-top: 1px;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(245, 191, 92);
+  background:  rgba(95, 97, 93, 0.377);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.intro:hover {
+  color: rgb(127, 219, 255);
+  background-color: rgba(198, 132, 214, 0.89);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+
+span::after {
+  padding: 5px;
+}
+
+input:invalid + span::before {
+  content: "✖";
+}
+
+input:invalid + span::before {
+  content: "";
+}
+
+input:valid + span::after {
+  content: "✓";
+}
+
+input:invalid + span::before {
+  content: null;
+}

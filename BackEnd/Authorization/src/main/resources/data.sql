@@ -1,0 +1,11 @@
+insert into user(id, name, password) values (1,'rishabh', 'test1');
+insert into user(id, name, password) values (2,'aryan',   'test2');
+insert into user(id, name, password) values (3,'shagun',  'test3');
+insert into user(id, name, password) values (4,'lokesh',  'test4');
+insert into user(id, name, password) values (5,'chandler', 'pass1');
+insert into user(id, name, password) values (6,'phoebe', 	 'pass2');
+insert into user(id, name, password) values (7,'sheldon',  'pass3');
+insert into user(id, name, password) values (8,'penny',    'pass4');
+insert into user(id, name, password) values (9,'dwight',   'pass5');
+insert into user(id, name, password) values (10,'toby',     'pass6');
+insert into user(id, name, password) values (11,'peter',    'pass7');

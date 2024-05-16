@@ -1,0 +1,59 @@
+<body>
+  <div class="login-wrapper" fxLayout="column" fxLayoutAlign="top center">
+    <nav class="intro">Loan Management System 💰</nav><br><br>
+
+
+    <br>
+    <br>
+    <br>
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+      <form class="example-form" #logInForm="ngForm" (ngSubmit)="onLogin(logInForm.value)">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput name="userName" [(ngModel)]="userName" placeholder="Username">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input type="password" matInput name="password" [(ngModel)]="password" placeholder="Password">
+          </mat-form-field>
+        </mat-card-content>
+        <button type="submit" mat-stroked-button color="accent" class="btn-block" value="logIn">Log in</button>
+        <br><br>
+        <td>
+          Click here to
+          <a href="/register/">Register</a>!
+        </td>
+      </form>
+    </mat-card>
+  </div>
+
+
+
+
+
+  <!-- Clients -->
+  <section>
+    <div class="container mb-4">
+      <h3 class="text-center"><b>Our Clients</b></h3>
+      <hr>
+      <div class="row container-fluid mx-auto">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2 " #c1><img
+            [src]="'https://i.ibb.co/2S5yyq5/client1.jpg'"></div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2"><img src="https://i.ibb.co/N9z6Hgd/client2.jpg"></div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2"><img src="https://i.ibb.co/hKJRhh3/client3.jpg"></div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2 "><img src="https://i.ibb.co/DKgtP3s/client4.jpg"></div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2 "><img src="https://i.ibb.co/Pwz4nvP/clients.jpg"></div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-6 shadow p-2 "><img src="https://i.ibb.co/2S5yyq5/client1.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End of Clients -->
+
+  <section>
+    <footer style="text-align: center;">Made with ❤️ in India <br>
+      © 2023 Copyright : All rights are reserved here </footer>
+  </section>
+</body>
